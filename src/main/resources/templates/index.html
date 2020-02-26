@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="htttp://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><a href="/addTeam">Add a team</a></h2>
+<h2><a href="/addPlayer">Add a player</a></h2>
+<br>
+
+
+<h1>Team list</h1>
+<div th:each="team: ${teams}">
+    <h4 th:text="${team.teamname}"></h4>
+    <ul th:each="player: ${team.players}">
+        <li th:text="${player.name}"></li>
+    </ul>
+
+</div>
+
+
+
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/processTeam}" th:object="${team}" method="post">
+    <input type="hidden" th:field="*{id}">
+    Name: <input type="text" placeholder="name" th:field="*{teamname}">
+    <br>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

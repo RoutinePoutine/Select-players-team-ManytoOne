@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/processPlayer}" th:object="${player}" method="post">
+    <input type="hidden" th:field="*{id}">
+    Name: <input type="text" placeholder="name" th:field="*{name}">
+    <br>
+
+    <select th:field="*{team}">
+        <div th:each="team: ${teams}">
+            <option th:value="${team.id}" th:text="${team.teamname}"></option>
+
+        </div>
+
+    </select>
+
+    <input type="submit" value="Submit">
+</form>
+
+
+</body>
+</html>
